@@ -1,5 +1,6 @@
 package br.com.jornadadeveficiente.mercadolivre.usuario.api;
 
+import br.com.jornadadeveficiente.mercadolivre.comum.dominio.Unique;
 import br.com.jornadadeveficiente.mercadolivre.usuario.dominio.Usuario;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -13,6 +14,7 @@ public class NovoUsuarioRequest {
 
   @NotBlank
   @Email
+  @Unique(entity = "Usuario", fieldName = "usuario")
   private String usuario;
   @NotBlank
   @Size(min = 6)

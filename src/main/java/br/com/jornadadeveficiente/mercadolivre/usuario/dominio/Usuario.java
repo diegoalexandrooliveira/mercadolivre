@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
@@ -27,6 +28,7 @@ public class Usuario {
   private String senha;
 
   @Past
+  @NotNull
   private LocalDateTime dataCriacao;
 
   public Usuario(@NotEmpty String usuario, @Size(min = 6) @NotEmpty String senha) {
